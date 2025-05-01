@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { dummyOrders } from '../assets/assets'
 const MyOrders =()=>{
-    const[myOrders,setMyOreders]=useState([])
+    const[myOrders,setMyOrders]=useState([])
     const {currency}=useAppContext()
     const fetchMyorders=async()=>{
-        setMyOreders(dummyOrders)
+        setMyOrders(dummyOrders)
     }
     useEffect(()=>{
         fetchMyorders()

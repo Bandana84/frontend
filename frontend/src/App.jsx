@@ -3,6 +3,9 @@ import Navbar from './components/Navbar'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 
+
+
+
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from './context/AuthContext'; 
 
@@ -30,6 +33,7 @@ const App =()=>{
   const { showUserLogin } = useAppContext()
   return(
     <AuthProvider>
+    
     <div>
      {isSellerPath ? null : <Navbar/>}
      {showUserLogin ? <Login/> :null}
@@ -51,12 +55,6 @@ const App =()=>{
 
 
 
-
-
-
-
-
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -68,6 +66,7 @@ const App =()=>{
       </div>
       {!isSellerPath &&<Footer/>}
     </div>
+
     </AuthProvider>
   )
 }
